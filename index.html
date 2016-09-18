@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    
+
+</html>
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Predictosaurus</title>
+        <meta name="description" content="losrs">
+        
+        <!--
+        TODO:
+        -->
+
+        <!--IMPORT JSAPI FOR GOOGLE CHARTS/ other chart stuff-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">google.load("visualization", "1", {packages:['table',"controls"]})</script>
+
+        <!--IMPORT MY OWN FILES-->
+        <script type="text/javascript" src="js.js"></script>
+        <script type="text/javascript" src="chart.js"></script>
+        <script type="text/javascript" src="submit.js"></script>
+        <link rel="stylesheet" type="text/css" href="css.css">
+        
+    </head>
+    <body>
+        
+         <div id="header">
+            
+            <ul>
+                
+                <li><a href="http://xkcd.com/627">Tech Support</a></li>
+                <li><a href="mailto:predictosaurus@mit.edu">Contact</a></li>
+                <li id="logo"><a href=""><img src="dino.png" style="width:auto;height:40px;float:left"></a></li>
+                <li><a href="http://ocw.mit.edu/index.htm">MIT OCW</a></li>
+                <li><a href="http://web.mit.edu/subjectevaluation/results.html">MIT Course Evaluations</a></li>
+            </ul>
+        </div>
+
+        <form>
+    
+            
+          <div id="UserID_button">
+              <br><br><br><br><br>
+                User ID: <br>
+                <input id="User ID" type="UserID_form" name="User ID" value="" required>
+                <br>
+                <button type="button" class="button"
+                onclick="disappear('UserID_button'); appear('Questions_text'); appear('Questions_form'); appear('UserID_display'); appear('Submit_button'); document.getElementById('UserID_text').innerHTML = 'User ID: ' + document.getElementById('User ID').value; appear('Query_button')">Login</button><br>
+            </div>
+
+             <div id="UserID_display", style="visibility: hidden">
+                <p id="UserID_text"></p>
+                <a href=""><button type="button" class="button" value="Logout">Logout</button></a>
+            </div>
+            
+            <div id="Questions_text", style="visibility: hidden">
+                Course ID: <br>
+                Interest: <br>
+                Difficulty: <br>
+                Time (hours/week):<br>
+            </div>
+            
+          <div id="Questions_form" style="visibility: hidden">
+              
+<!--              Course ID-->
+              <input type="Questions_form" id="Course ID" name="Course ID" value=""><br>
+
+              <script type="text/javascript">
+              function showValue(id,newValue){
+                document.getElementById(id).innerHTML=newValue;
+              }
+              </script>
+
+<!--              Interest-->
+              <input id="Interest" type="range" min="0" max="20" value="10" step="1" onchange="showValue('range',this.value)" />
+              <span id="range">10</span>
+              <br>
+
+<!--              Difficulty-->
+              <input id="Diff" type="range" min="0" max="20" value="10" step="1" onchange="showValue('range2',this.value)" />
+              <span id="range2">10</span>
+                <br>
+
+<!--              Time (hours/week)-->
+              <input id="Time" type="range" min="0" max="20" value="10" step="1" onchange="showValue('range3',this.value)" />
+              <span id="range3">10</span>
+             <br>
+            </div>
+            
+            <div id="Submit_button", style="visibility: hidden">
+              <button class="button" type="button" onclick="Submit(document.getElementById('User ID').value, document.getElementById('Course ID').value, document.getElementById('Interest').value, document.getElementById('Diff').value, document.getElementById('Time').value)">Submit</button>
+            </div>
+            
+            <div id="Query_button", style="visibility:hidden">
+                <button class="button" type="button" onclick="Query(document.getElementById('User ID').value)">Query</button>
+            </div>
+
+          <script type="text/javascript">
+          function disappear(id) {
+                var e = document.getElementById(id);
+                    e.style.display = 'none';
+          }
+
+          function appear(id) {
+                var e = document.getElementById(id);
+                    e.style.visibility = 'visible';
+          }
+
+          function showID() {
+          var input = document.getElementById("userInput").value;
+          }
+
+          </script>
+
+        </form>
+        
+        <br>
+        <div style="width:800px; margin:0 auto;"> 
+            
+        <div id="dash" align="left">
+            <div class="range-slider" id="sl"></div>
+            <div class="range-slider" id="sl2"></div>
+            <div class="range-slider" id="sl3"></div>
+        </div>
+            
+            <br>
+        <div id="table"></div>
+            
+        </div>
+    </body>
+</html>

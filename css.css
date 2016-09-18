@@ -1,0 +1,103 @@
+body {
+    font-family: "Arial";
+    font-weight: bold;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+li {
+    float: right;
+}
+#logo {
+    float:left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+form {
+    text-align: center;
+}
+#dash {
+    text-align: center;
+}
+#table {
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+}
+#header {
+    margin: -10px;
+    padding: -10px;
+}
+#Questions {
+    text-align: center;
+}
+#Questions_text {
+    text-align: right;
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+    height: 180px;
+    line-height: 40px;
+}
+#Questions_form {
+    text-align: left;
+    float: right;
+    width: 49%;
+    margin-left: 1%;
+    height: 180px;
+}
+#UserID_display {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+input[type=UserID_form], select {
+    width: 250px;
+    padding: 10px 10px;
+    margin: 8px 0px;
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=Questions_form], select {
+    width: 120px;
+    padding: 10px 10px;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=range], select{
+    margin: 14px 0;
+    width: 120px;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #c0c0c0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 4px 10px;
+    width: 250px;
+    cursor: pointer;
+    margin: 5px;
+}
